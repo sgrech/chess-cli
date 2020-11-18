@@ -1,0 +1,20 @@
+{
+  "name": "chess-cli",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node dist/app.js",
+    "start:dev": "nodemon dist/app.js",
+    "compile:watch": "tsc -w"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.13.0",
+    "nodemon": "^2.0.6",
+    "prettier-eslint": "^11.0.0"
+  }
+}
