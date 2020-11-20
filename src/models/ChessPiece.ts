@@ -1,21 +1,19 @@
-enum PieceColors {
-  WHITE,
-  BLACK,
-}
+import { PieceColors, PieceSymbols } from "../types/chess";
 
-enum Pieces {
-  ROOK = "R",
-  KNIGHT = "N",
-  BISHOP = "B",
-  QUEEN = "Q",
-  KING = "K",
-}
+export abstract class ChessPiece {
+  color: PieceColors;
+  position: Position;
+  pieceSymbol: PieceSymbols;
 
-interface Position {
-  column: number;
-  row: number;
-}
+  constructor(
+    color: PieceColors,
+    position: Position,
+    pieceSymbol: PieceSymbols
+  ) {
+    this.color = color;
+    this.position = position;
+    this.pieceSymbol = pieceSymbol;
+  }
 
-abstract class ChessPiece {
-  constructor(color: PieceColors, position: Position, pieceType: Pieces) {}
+  abstract move(nextPosition: string): void;
 }
