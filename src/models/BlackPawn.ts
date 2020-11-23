@@ -1,5 +1,5 @@
 import { ChessPiece } from "./ChessPiece";
-import { PieceColors, PieceSymbols } from "../types/chess";
+import { PieceColors, PieceSymbols } from "@interfaces/chess";
 
 export class BlackPawn extends ChessPiece {
   constructor(position: Position) {

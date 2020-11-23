@@ -1,4 +1,4 @@
-import { PieceColors, PieceSymbols } from "../types/chess";
+import { PieceColors, PieceSymbols } from "@interfaces/chess";
 
 export abstract class ChessPiece {
   color: PieceColors;

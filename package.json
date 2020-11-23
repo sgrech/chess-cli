@@ -11,10 +11,24 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/config": "0.0.36",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
+    "dotenv": "^8.2.0",
     "eslint": "^7.13.0",
     "nodemon": "^2.0.6",
     "prettier-eslint": "^11.0.0"
+  },
+  "dependencies": {
+    "@mikro-orm/core": "^4.3.1",
+    "@mikro-orm/postgresql": "^4.3.1",
+    "axios": "^0.21.0",
+    "config": "^3.3.2",
+    "module-alias": "^2.2.2",
+    "ts-method-cache": "^3.3.1"
+  },
+  "_moduleAliases": {
+    "@services": "dist/services",
+    "@interfaces": "dist/interfaces"
   }
 }

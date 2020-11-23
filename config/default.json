@@ -1,0 +1,5 @@
+{
+  "chessDotCom": {
+    "baseUrl": "https://api.chess.com"
+  }
+}
