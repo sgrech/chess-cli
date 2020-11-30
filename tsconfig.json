@@ -10,9 +10,13 @@
     "forceConsistentCasingInFileNames": true,
     "baseUrl": "./src",
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "paths": {
       "@services/*": ["services/*"],
-      "@interfaces/*": ["interfaces/*"]
+      "@interfaces/*": ["interfaces/*"],
+      "@entities/*": ["entities/*"],
+      "@infrastructure/*": ["infrastructure/*"],
+      "@utilities/*": ["utilities/*"]
     }
   }
 }

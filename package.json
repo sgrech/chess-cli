@@ -5,23 +5,32 @@
   "main": "index.js",
   "scripts": {
     "start": "node dist/app.js",
-    "start:dev": "nodemon dist/app.js",
-    "compile:watch": "tsc -w"
+    "start:dev": "nodemon -r dotenv/config dist/app.js",
+    "compile:watch": "tsc -w",
+    "migration:create": "dotenv cross-var mikro-orm migration:create -r --fk-checks",
+    "migration:up": "dotenv cross-var mikro-orm migration:up"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@types/config": "0.0.36",
+    "@types/node": "^14.14.10",
     "@typescript-eslint/eslint-plugin": "^4.8.1",
     "@typescript-eslint/parser": "^4.8.1",
+    "cross-var": "^1.1.0",
     "dotenv": "^8.2.0",
+    "dotenv-cli": "^4.0.0",
     "eslint": "^7.13.0",
     "nodemon": "^2.0.6",
-    "prettier-eslint": "^11.0.0"
+    "prettier-eslint": "^11.0.0",
+    "ts-node": "^9.0.0"
   },
   "dependencies": {
+    "@mikro-orm/cli": "^4.3.2",
     "@mikro-orm/core": "^4.3.1",
+    "@mikro-orm/migrations": "^4.3.2",
     "@mikro-orm/postgresql": "^4.3.1",
+    "@mikro-orm/reflection": "^4.3.2",
     "axios": "^0.21.0",
     "config": "^3.3.2",
     "module-alias": "^2.2.2",
@@ -29,6 +38,17 @@
   },
   "_moduleAliases": {
     "@services": "dist/services",
-    "@interfaces": "dist/interfaces"
+    "@interfaces": "dist/interfaces",
+    "@entities": "dist/entities",
+    "@infrastructure": "dist/infrastructure",
+    "@utilities": "dist/utilities"
+  },
+  "mikro-orm": {
+    "useTsNode": true,
+    "tsConfigPath": "./tsconfig.orm.json",
+    "configPaths": [
+      "./src/infrastructure/db/mikro-orm.config.ts",
+      "./dist/infrastructure/db/mikro-orm.config.js"
+    ]
   }
 }
